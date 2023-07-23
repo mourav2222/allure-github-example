@@ -1,5 +1,6 @@
 package qa.guru.allure;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
@@ -15,6 +16,10 @@ public class GitHubTest {
     @Test
     void searchForIssue() {
 
+        String idea = System.getenv("idea");
+        System.out.println("idea: " + idea);
+
+        Configuration.remote = "http://localhost:4444/wd/hub";
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         open("https://github.com");
