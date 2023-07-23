@@ -21,9 +21,9 @@ jobs:
           distribution: 'zulu'
       - name: Start selenoid
         uses: Xotabu4/selenoid-github-action@v2
-      - name: Start Chrome
+      - name: Start Chrome browser
         uses: browser-actions/setup-chrome@v1
-        run: chrome --version
+      - run: chrome --version
       - run: ./gradlew clean test
       - name: Copy History
         uses: actions/checkout@v2
