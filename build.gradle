@@ -35,4 +35,8 @@ dependencies {
 
 test {
     useJUnitPlatform()
+
+    println "idea: " + project.findProperty('idea') ?: 'false'
+    systemProperty("idea", project.findProperty('idea') ?: 'false')
+
 }

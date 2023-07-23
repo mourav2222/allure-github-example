@@ -16,7 +16,7 @@ public class GitHubTest {
     @Test
     void searchForIssue() {
 
-        String idea = System.getenv("idea");
+        String idea = System.getProperty("idea");
         System.out.println("idea: " + idea);
 
         Configuration.remote = "http://localhost:4444/wd/hub";
