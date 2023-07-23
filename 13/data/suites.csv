@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Jul 23 14:30:37 GMT 2023","Sun Jul 23 14:30:48 GMT 2023","10611","","qa.guru.allure.GitHubTest","","qa.guru.allure.GitHubTest","searchForIssue","Search for issue with number 74",""
+"passed","Sun Jul 23 14:30:55 GMT 2023","Sun Jul 23 14:31:00 GMT 2023","5383","","qa.guru.allure.GitHubTest","","qa.guru.allure.GitHubTest","searchForIssue2","Search for issue with number 81",""
+"passed","Sun Jul 23 14:30:48 GMT 2023","Sun Jul 23 14:30:55 GMT 2023","6504","","qa.guru.allure.GitHubTest","","qa.guru.allure.GitHubTest","searchForIssue1","Search for issue with number 80",""
