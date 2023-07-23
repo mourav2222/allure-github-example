@@ -29,3 +29,5 @@ jobs:
       - run: allurectl watch -- ./gradlew clean test
         env:
           ALLURE_RESULTS: build/allure-results
+
+
