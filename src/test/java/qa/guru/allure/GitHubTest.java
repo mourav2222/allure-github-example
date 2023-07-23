@@ -49,7 +49,6 @@ public class GitHubTest {
     @DisplayName("Search for issue with number 80")
     void searchForIssue1() {
 
-
         step("Open main page", () -> open("https://github.com"));
 
         step("Search for repository", () -> {
