@@ -23,7 +23,7 @@ public class GitHubTest {
         System.out.println("idea: " + idea);
 
         if(!Boolean.valueOf(idea)) {
-            Configuration.remote = "http:/localhost:4444/wd/hub";
+            Configuration.remote = "http://localhost:4444/wd/hub";
         }
         SelenideLogger.addListener("allure", new AllureSelenide());
 
