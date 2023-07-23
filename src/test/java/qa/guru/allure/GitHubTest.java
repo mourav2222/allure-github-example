@@ -19,7 +19,7 @@ public class GitHubTest {
         String idea = System.getenv("idea");
         System.out.println("idea: " + idea);
 
-        Configuration.remote = "http;//localhost:4444/wd/hub";
+        Configuration.remote = "http://localhost:4444/wd/hub";
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         open("https://github.com");
