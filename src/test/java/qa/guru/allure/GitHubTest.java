@@ -6,6 +6,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selectors.byLinkText;
@@ -14,6 +15,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
+@ExtendWith(MyReportPortalExtension.class)
 public class GitHubTest {
 
     @BeforeAll
@@ -33,6 +35,7 @@ public class GitHubTest {
     @DisplayName("Search for issue with number 74")
     void searchForIssue() {
 
+        step("Open github XXX...");
         open("https://github.com");
         $(".header-search-button ").click();
 //        $(byId("query-builder-test")).sendKeys("allure-example");
