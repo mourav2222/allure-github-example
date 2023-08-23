@@ -1,9 +1,5 @@
 package qa.guru.allure;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,24 +12,24 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 @ExtendWith(MyReportPortalExtension.class)
-public class GitHubTest {
+public class GitHubTest extends BaseTest {
 
-    @BeforeAll
-    static void setup() {
-
-        String idea = System.getProperty("idea");
-        System.out.println("idea: " + idea);
-
-        if(!Boolean.valueOf(idea)) {
-            Configuration.remote = "http://localhost:4444/wd/hub";
-        }
-        SelenideLogger.addListener("allure", new AllureSelenide());
-
-    }
+//    @BeforeAll
+//    static void setup() {
+//
+//        String idea = System.getProperty("idea");
+//        System.out.println("idea: " + idea);
+//
+//        if(!Boolean.valueOf(idea)) {
+//            Configuration.remote = "http://localhost:4444/wd/hub";
+//        }
+//        SelenideLogger.addListener("allure", new AllureSelenide());
+//
+//    }
 
     @Test
     @DisplayName("Search for issue with number 74")
-    void searchForIssue() {
+    void searchForIssue74() {
 
         step("Open github XXX...");
         open("https://github.com");
@@ -47,6 +43,22 @@ public class GitHubTest {
         $("#issues-tab").click();
         $(withText("#74")).should(exist);
     }
+
+    @Test
+    @DisplayName("BaseTest: Search for issue with number 80")
+    void searchForIssueBaseTest1() {
+
+        openMainPage();
+
+        searchForRepository("allure-example");
+
+        step("Open repository by link", () -> $(byLinkText("eroshenkoam/allure-example")).click());
+
+        step("Open issue tab", ()-> $("#issues-tab").click());
+
+        step("Should see issue with number 80", () -> $(withText("#80")).should(exist));
+    }
+
 
     @Test
     @DisplayName("Search for issue with number 80")

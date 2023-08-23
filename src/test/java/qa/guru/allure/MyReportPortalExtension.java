@@ -22,7 +22,7 @@ public class MyReportPortalExtension extends ReportPortalExtension {
         String launchUuid = launch.getLaunch().blockingGet();
         LOGGER.info("Launch UUID: {}", launchUuid);
 
-        Maybe<LaunchResource> launchResourceMaybe = launch.getClient().getLaunchByUuid(launch.getLaunch().blockingGet());
+        Maybe<LaunchResource> launchResourceMaybe = launch.getClient().getLaunchByUuid(launchUuid);
         Long launchNumber = launchResourceMaybe.blockingGet().getNumber();
         LOGGER.info("Launch Number: #{}", launchNumber);
 
