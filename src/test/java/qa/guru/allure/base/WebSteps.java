@@ -1,4 +1,4 @@
-package qa.guru.allure;
+package qa.guru.allure.base;
 
 import io.qameta.allure.Step;
 
@@ -12,19 +12,19 @@ import static com.codeborne.selenide.Selenide.open;
 public class WebSteps {
 
     @Step("Open main page")
-    void openMainPage() {
+    public void openMainPage() {
         open("https://github.com");
     }
 
     @Step("Search for repository {repo}")
-    void searchForReository(String repo) {
+    public void searchForReository(String repo) {
         $(".header-search-button ").click();
         $("#query-builder-test").sendKeys(repo);
         $("#query-builder-test").submit();
     }
 
     @Step("Open repository by link {link}")
-    void openRepositoryByLink(String link) {
+    public void openRepositoryByLink(String link) {
         $(byLinkText(link)).click();
     }
 

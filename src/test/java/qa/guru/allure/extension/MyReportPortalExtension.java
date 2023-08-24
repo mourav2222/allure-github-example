@@ -1,4 +1,4 @@
-package qa.guru.allure;
+package qa.guru.allure.extension;
 
 import com.epam.reportportal.junit5.ReportPortalExtension;
 import com.epam.reportportal.service.Launch;

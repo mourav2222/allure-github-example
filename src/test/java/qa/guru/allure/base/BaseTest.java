@@ -1,4 +1,4 @@
-package qa.guru.allure;
+package qa.guru.allure.base;
 
 import com.codeborne.selenide.junit5.TextReportExtension;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -8,6 +8,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import qa.guru.allure.extension.TestCmdExtension;
+import qa.guru.allure.extension.WebdriverSetup;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -25,7 +27,7 @@ public abstract class BaseTest {
     }
 
     @Step("Search for repository {repo}")
-    void searchForRepository(String repo) {
+    public void searchForRepository(String repo) {
         step("Step1111", () -> {
             $(".header-search-button ").click();
             $("#query-builder-test").sendKeys(repo);

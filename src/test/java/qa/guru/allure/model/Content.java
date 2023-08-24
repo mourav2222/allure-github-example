@@ -1,12 +1,13 @@
-package qa.guru.allure;
+package qa.guru.allure.model;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
 public class Content {
 
-    @SerializedName("content")
+//    @SerializedName("content")
+    @JsonProperty(value = "content")
     private List<Launch> content;
 
 

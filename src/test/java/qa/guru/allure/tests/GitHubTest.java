@@ -1,8 +1,11 @@
-package qa.guru.allure;
+package qa.guru.allure.tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import qa.guru.allure.base.WebSteps;
+import qa.guru.allure.base.BaseTest;
+import qa.guru.allure.extension.MyReportPortalExtension;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selectors.byLinkText;
