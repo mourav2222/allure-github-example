@@ -25,6 +25,12 @@ public class GitHubTest {
         if(!Boolean.valueOf(idea)) {
             Configuration.remote = "http://localhost:4444/wd/hub";
         }
+
+        String selenoid_srv = System.getenv("SELENOID_TEST");
+        if(selenoid_srv != null) {
+            Configuration.remote = "http://" + selenoid_srv + ":4444/wd/hub";
+        }
+        
         SelenideLogger.addListener("allure", new AllureSelenide());
 
     }
