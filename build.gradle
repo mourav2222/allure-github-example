@@ -6,17 +6,26 @@ plugins {
 group = 'com.mkm'
 version = '1.0-SNAPSHOT'
 
+java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
 allure {
     report {
-        version = "2.23.0"
+        version = "2.26.0"
     }
 
     adapter {
-        aspectjVersion.set("1.9.5")
+        aspectjVersion.set("1.9.22")
         frameworks {
             junit5 {
                 // Defaults to allureJavaVersion
-                adapterVersion.set("2.23.0")
+                adapterVersion.set("2.26.0")
             }
         }
     }

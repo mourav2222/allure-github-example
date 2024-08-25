@@ -1,12 +1,8 @@
 package qa.guru.allure;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.checkerframework.checker.units.qual.A;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,9 +19,9 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class GitHubTest {
+public class GitHubTest003 {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(GitHubTest.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(GitHubTest003.class);
     private final long SLEEPTIME = 10000;
 
     @BeforeAll
@@ -55,13 +51,6 @@ public class GitHubTest {
 
         SelenideLogger.addListener("allure", new AllureSelenide());
 
-    }
-
-    @AfterAll
-    static void tearDown() {
-        if(WebDriverRunner.hasWebDriverStarted()) {
-        Selenide.closeWebDriver();
-        }
     }
 
     @Test
